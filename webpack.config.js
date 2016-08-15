@@ -21,6 +21,10 @@ var config = {
         test: /\.scss$/,
         include: APP_DIR,
         loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.css$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   }

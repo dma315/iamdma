@@ -1,5 +1,6 @@
 import './globals.jsx'
 require("./app.scss")
+require("normalize.css")
 
 var Test = require('./app/Test.jsx')
 
