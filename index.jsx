@@ -18,11 +18,14 @@ var App = React.createClass({
     }
 })
 
-// window.routes = (
-//     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-//         <Route path="/" component={ App }>
-//         </Route>
-//     </Router>
-// )
+var Test = require('./components/Test.jsx')
+
+window.routes = (
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
+        <Route path="/" component={ App }>
+            <IndexRoute component={ Test}></IndexRoute>
+        </Route>
+    </Router>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'));

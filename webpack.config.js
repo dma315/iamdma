@@ -20,7 +20,7 @@ var config = {
       {
         test : /\.jsx?/,
         include : [BASE_DIR, COMPONENT_DIR, LIBRARY_DIR, SASS_DIR],
-        loader : 'babel'
+        loader : 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -28,9 +28,10 @@ var config = {
       }
     ]
   },
-  "scripts": {
-    "dev": "webpack -d --watch",
-    "build" : "webpack -p"
+  devServer: {
+    inline: true,
+    contentBase: '../iamdma',
+    port: 8100
   },
 };
 

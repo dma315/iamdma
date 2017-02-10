@@ -70,12 +70,19 @@
 	    }
 	});
 	
-	// window.routes = (
-	//     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-	//         <Route path="/" component={ App }>
-	//         </Route>
-	//     </Router>
-	// )
+	var Test = __webpack_require__(/*! ./components/Test.jsx */ 487);
+	
+	window.routes = React.createElement(
+	    Router,
+	    { onUpdate: function onUpdate() {
+	            return window.scrollTo(0, 0);
+	        }, history: browserHistory },
+	    React.createElement(
+	        Route,
+	        { path: '/', component: App },
+	        React.createElement(IndexRoute, { component: Test })
+	    )
+	);
 	
 	ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 
@@ -24764,7 +24771,8 @@
   \****************************************/
 /***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
+	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+	module.exports = __webpack_amd_options__;
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
@@ -56597,11 +56605,50 @@
 			module.deprecate = function () {};
 			module.paths = [];
 			// module.parent = undefined by default
-			module.children = [];
+			if (!module.children) module.children = [];
+			Object.defineProperty(module, "loaded", {
+				enumerable: true,
+				get: function get() {
+					return module.l;
+				}
+			});
+			Object.defineProperty(module, "id", {
+				enumerable: true,
+				get: function get() {
+					return module.i;
+				}
+			});
 			module.webpackPolyfill = 1;
 		}
 		return module;
 	};
+
+/***/ },
+/* 487 */
+/*!*****************************!*\
+  !*** ./components/Test.jsx ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var Test = React.createClass({
+	    displayName: "Test",
+	
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	                "h1",
+	                null,
+	                "Hello"
+	            )
+	        );
+	    }
+	});
+	
+	module.exports = Test;
 
 /***/ }
 /******/ ]);
